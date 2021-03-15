@@ -45,3 +45,5 @@ Cmd: compileComputeKernel
   api=4 insize=12692 outsize=8653 ok=1
 Cmd: compileComputeKernel
   api=4 insize=38201 outsize=1515 ok=1
+Cmd: initializeCompiler
+Cmd: shutdown
