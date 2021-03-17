@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Scenes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
