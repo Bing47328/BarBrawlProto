@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     public Rigidbody2D rb;
 
     public float moveSpeed = 5;
@@ -19,6 +21,12 @@ public class PlayerController : MonoBehaviour
     public GameObject impactPrefab;
 
     public int currentAmmo;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
