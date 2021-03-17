@@ -341,7 +341,7 @@ MonoBehaviour:
   rb: {fileID: 167022965}
   moveSpeed: 5
   mouseSens: 1
-  viewCam: {fileID: 963194228}
+  viewCam: {fileID: 963194227}
 --- !u!4 &167022967
 Transform:
   m_ObjectHideFlags: 0
