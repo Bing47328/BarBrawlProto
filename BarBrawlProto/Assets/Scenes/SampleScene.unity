@@ -424,6 +424,8 @@ MonoBehaviour:
   fistAnim: {fileID: 0}
   maxHealth: 100
   deadScreen: {fileID: 1285906082}
+  healthText: {fileID: 673420863}
+  ammoText: {fileID: 2137537208}
 --- !u!4 &167022967
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public GameObject deadScreen;
     private bool hasDied;
 
+    public Text healthText, ammoText;
 
     private void Awake()
     {
@@ -38,6 +40,9 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         currentHealth = maxHealth;
+
+        healthText.text = currentHealth.ToString() + "%";
+        ammoText.text = currentAmmo.ToString();
     }
 
     // Update is called once per frame
@@ -83,6 +88,7 @@ public class PlayerController : MonoBehaviour
                     }
                     currentAmmo--;
                     fistAnim.SetTrigger("Shoot");
+                    AmmoUI();
                 }
 
             }
@@ -97,7 +103,10 @@ public class PlayerController : MonoBehaviour
         {
             deadScreen.SetActive(true);
             hasDied = true;
+            currentHealth = 0;
         }
+
+        healthText.text = currentHealth.ToString() + "%";
     }
 
     public void AddHealth(int healAmount)
@@ -107,5 +116,11 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        healthText.text = currentHealth.ToString() + "%";
+    }
+
+    public void AmmoUI()
+    { 
+        
     }
 }
