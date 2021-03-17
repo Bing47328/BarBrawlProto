@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public int currentAmmo;
 
+    public Animator fistAnim;
+
 
     private void Awake()
     {
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Looking @ Nothing");
                 }
                 currentAmmo--;
+                fistAnim.SetTrigger("Shoot");
             }
 
         }
