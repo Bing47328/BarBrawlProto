@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public int currentAmmo;
 
     public Animator fistAnim;
+    public Animator anim;
 
     private int currentHealth;
     public int maxHealth = 100;
@@ -91,6 +92,15 @@ public class PlayerController : MonoBehaviour
                     AmmoUI();
                 }
 
+            }
+
+            if (moveInput != Vector2.zero)
+            {
+                anim.SetBool("isMoving", true);
+            }
+            else
+            {
+                anim.SetBool("isMoving", false);
             }
         }
     }
