@@ -30,6 +30,10 @@ public class EnemyController : MonoBehaviour
 
             rb.velocity = playerDirection.normalized * moveSpeed;
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     public void TakeDMG()
