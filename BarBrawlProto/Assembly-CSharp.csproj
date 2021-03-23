@@ -91,9 +91,6 @@
     <Reference Include="Unity.ProGrids.Editor">
       <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -114,9 +111,6 @@
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
