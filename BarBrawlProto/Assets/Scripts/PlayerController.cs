@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public Camera viewCam;
 
     public GameObject impactPrefab;
-    public int currentAmmo;
+    //public int currentAmmo;
 
     public Animator fistAnim;
     public Animator anim;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
 
         healthText.text = currentHealth.ToString() + "%";
-        ammoText.text = currentAmmo.ToString();
+       // ammoText.text = currentAmmo.ToString();
     }
 
     // Update is called once per frame
@@ -69,8 +69,8 @@ public class PlayerController : MonoBehaviour
             //Shoot
             if (Input.GetMouseButtonDown(0))
             {
-                if (currentAmmo > 0)
-                {
+               // if (currentAmmo > 0)
+                //{
                     Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit))
@@ -87,10 +87,10 @@ public class PlayerController : MonoBehaviour
                     {
                         Debug.Log("Looking @ Nothing");
                     }
-                    currentAmmo--;
+                    //currentAmmo--;
                     fistAnim.SetTrigger("Shoot");
-                    AmmoUI();
-                }
+                    //AmmoUI();
+               // }
 
             }
 
