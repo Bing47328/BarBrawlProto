@@ -415,7 +415,7 @@ MonoBehaviour:
   moveSpeed: 5
   mouseSens: 1
   viewCam: {fileID: 963194227}
-  impactPrefab: {fileID: 2131108360459198036, guid: 98ed479018889d840b9f43abeab76cab,
+  impactPrefab: {fileID: 5437532464968066350, guid: bfeb9f3a6c8e0314da68271626f803f1,
     type: 3}
   fistAnim: {fileID: 262516698}
   anim: {fileID: 167022969}

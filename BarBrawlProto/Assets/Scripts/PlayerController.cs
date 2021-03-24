@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 //{
                     Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                     RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit))
+                    if (Physics.Raycast(ray, out hit, 1))
                     {
                         Instantiate(impactPrefab, hit.point, transform.rotation);
 
