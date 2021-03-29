@@ -24,9 +24,9 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+        if (Vector3.Distance(transform.position, FPController.instance.transform.position) < playerRange)
         {
-            Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
+            Vector3 playerDirection = FPController.instance.transform.position - transform.position;
 
             rb.velocity = playerDirection.normalized * moveSpeed;
         }

@@ -10,7 +10,7 @@ public class HealthPickup : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            PlayerController.instance.AddHealth(healAmount);
+            FPController.instance.AddHealth(healAmount);
         }
     }
 }
