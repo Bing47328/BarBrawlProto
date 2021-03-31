@@ -4,9 +4,11 @@ using UnityEngine.AI;
 
 public class EnemyAI: MonoBehaviour
 {
+    public static EnemyAI instance;
     public NavMeshAgent agent;
 
     public Transform player;
+    public Transform playerLookAt;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -17,6 +19,8 @@ public class EnemyAI: MonoBehaviour
     bool walkPointSet;
     public float walkPointRange;
 
+    public bool canShoot;
+
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
@@ -25,6 +29,14 @@ public class EnemyAI: MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+
+    //Aim
+    public Transform shot;
+    public Vector3 aim;
+
+    //Animation
+    public Animator anim;
+    private string currentState;
 
     private void Awake()
     {
@@ -41,6 +53,15 @@ public class EnemyAI: MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+
+        aim = new Vector3(shot.transform.position.x, shot.transform.position.y, shot.transform.position.z);
+    }
+
+    void ChangingAnimationState(string newState)
+    {
+        if (currentState == newState) return;
+        anim.Play(newState);
+        currentState = newState;
     }
 
     private void Patroling()
@@ -71,6 +92,8 @@ public class EnemyAI: MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+
+        ChangingAnimationState("Walk");
     }
 
     private void AttackPlayer()
@@ -78,18 +101,22 @@ public class EnemyAI: MonoBehaviour
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        transform.LookAt(playerLookAt);
 
-        if (!alreadyAttacked)
+        if (canShoot)
         {
-            ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            ///End of attack code
+            if (!alreadyAttacked)
+            {
+                ChangingAnimationState("Throw");
+                ///Attack code here
+                Rigidbody rb = Instantiate(projectile, aim, Quaternion.identity).GetComponent<Rigidbody>();
+                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+                rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+                ///End of attack code
 
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            }
         }
     }
     private void ResetAttack()
@@ -106,6 +133,16 @@ public class EnemyAI: MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            FPController.instance.TakeDMG(10);
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
     }
 
     private void OnDrawGizmosSelected()

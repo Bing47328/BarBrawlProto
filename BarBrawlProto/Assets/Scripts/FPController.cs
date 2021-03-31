@@ -69,14 +69,14 @@ public class FPController : MonoBehaviour
             {
                 Ray ray = _camera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 1))
+                if (Physics.Raycast(ray, out hit, 5f))
                 {
                     Instantiate(impactPrefab, hit.point, transform.rotation);
 
                     //Enemy Hit
                     if (hit.transform.tag == "Enemy")
                     {
-                        hit.transform.GetComponent<EnemyController>().TakeDMG();
+                        hit.transform.GetComponent<EnemyAI>().TakeDamage(5);
                     }
                 }
                 else
@@ -120,6 +120,7 @@ public class FPController : MonoBehaviour
             deadScreen.SetActive(true);
             hasDied = true;
             currentHealth = 0;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         healthText.text = currentHealth.ToString() + "%";
@@ -133,5 +134,16 @@ public class FPController : MonoBehaviour
             currentHealth = maxHealth;
         }
         healthText.text = currentHealth.ToString() + "%";
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (other.tag == "Enemy")
+            {
+                EnemyAI.instance.TakeDamage(5);
+            }
+        }
     }
 }
