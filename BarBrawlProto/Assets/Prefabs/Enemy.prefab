@@ -78,7 +78,7 @@ MonoBehaviour:
   projectile: {fileID: 1905503618554466263, guid: 00c2f5d9e3fd6d0429ab59951c3d3b09,
     type: 3}
   sightRange: 10
-  attackRange: 5
+  attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
   shot: {fileID: 8810231121195818572}

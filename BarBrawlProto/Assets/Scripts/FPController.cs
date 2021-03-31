@@ -136,14 +136,4 @@ public class FPController : MonoBehaviour
         healthText.text = currentHealth.ToString() + "%";
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (other.tag == "Enemy")
-            {
-                EnemyAI.instance.TakeDamage(5);
-            }
-        }
-    }
 }
