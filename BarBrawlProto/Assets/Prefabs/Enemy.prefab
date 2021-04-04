@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3a4628be90b2c4db1c90bd565164b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flashImage: {fileID: 0}
   agent: {fileID: 614248342862867748}
   player: {fileID: 0}
   playerLookAt: {fileID: 0}
@@ -79,7 +78,7 @@ MonoBehaviour:
   projectile: {fileID: 1905503618554466263, guid: f7f8e7995964e1a43acdc5f43de4cabc,
     type: 3}
   sightRange: 10
-  attackRange: 2
+  attackRange: 0.5
   playerInSightRange: 0
   playerInAttackRange: 0
   shot: {fileID: 614248343627929469}

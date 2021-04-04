@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class FPController : MonoBehaviour
 {
+    [SerializeField] FlashImage _dmgImage = null;
+    [SerializeField] FlashImage _healImage = null;
+
+
     public static FPController instance;
     
     //Text
@@ -113,6 +117,7 @@ public class FPController : MonoBehaviour
 
     public void TakeDMG(int dmgAmount)
     {
+        _dmgImage.Flash();
         currentHealth -= dmgAmount;
 
         if (currentHealth <= 0)
@@ -128,6 +133,7 @@ public class FPController : MonoBehaviour
 
     public void AddHealth(int healAmount)
     {
+        _healImage.Flash();
         currentHealth += healAmount;
         if (currentHealth > maxHealth)
         {
