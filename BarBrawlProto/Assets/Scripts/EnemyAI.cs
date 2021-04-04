@@ -4,6 +4,8 @@ using UnityEngine.AI;
 
 public class EnemyAI: MonoBehaviour
 {
+    [SerializeField] FlashImage _flashImage = null;
+
     public static EnemyAI instance;
     public NavMeshAgent agent;
 
@@ -41,6 +43,7 @@ public class EnemyAI: MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
+        _flashImage = GetComponent<FlashImage>();
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -76,6 +79,7 @@ public class EnemyAI: MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
+        ChangingAnimationState("Walk");
     }
     private void SearchWalkPoint()
     {
@@ -140,6 +144,7 @@ public class EnemyAI: MonoBehaviour
         if (other.tag == "Player")
         {
             FPController.instance.TakeDMG(10);
+            _flashImage.StartFlash(.25f, .5f, Color.red);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }

@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FlashImage.cs" />
     <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
@@ -72,7 +73,7 @@
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Scenes.cs" />
-    <Compile Include="Assets\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
