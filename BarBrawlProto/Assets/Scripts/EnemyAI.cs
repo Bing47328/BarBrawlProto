@@ -20,6 +20,7 @@ public class EnemyAI: MonoBehaviour
     public float walkPointRange;
 
     public bool canShoot;
+    public bool canStun;
 
     //Attacking
     public float timeBetweenAttacks;
@@ -119,6 +120,15 @@ public class EnemyAI: MonoBehaviour
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
+
+        if (canStun)
+        {
+            if (!alreadyAttacked)
+            {
+                ChangingAnimationState("Attack");
+                
+            }
+        }
     }
     private void ResetAttack()
     {
@@ -143,6 +153,10 @@ public class EnemyAI: MonoBehaviour
             FPController.instance.TakeDMG(10);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            if (canStun)
+            {
+                FPController.instance.GetStun(2);
+            }
         }
     }
 

@@ -131,6 +131,11 @@ public class FPController : MonoBehaviour
         healthText.text = currentHealth.ToString() + "%";
     }
 
+    public void GetStun(int seconds)
+    {
+        StartCoroutine(Stunned(seconds));
+    }
+
     public void AddHealth(int healAmount)
     {
         _healImage.Flash();
@@ -142,4 +147,16 @@ public class FPController : MonoBehaviour
         healthText.text = currentHealth.ToString() + "%";
     }
 
+
+    IEnumerator Stunned(float seconds)
+    {
+        float _prevSpeed = _speed;
+        _speed = 0f;
+
+        yield return new WaitForSeconds(seconds);
+
+        _speed = _prevSpeed;
+
+
+    }
 }
