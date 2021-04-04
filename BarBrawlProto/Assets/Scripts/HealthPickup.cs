@@ -6,11 +6,12 @@ public class HealthPickup : MonoBehaviour
 {
     public int healAmount = 25;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
         {
             FPController.instance.AddHealth(healAmount);
+            Destroy(gameObject);
         }
     }
 }
