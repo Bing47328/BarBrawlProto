@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class FPController : MonoBehaviour
 {
-    [SerializeField] FlashImage _dmgImage = null;
-    [SerializeField] FlashImage _healImage = null;
+    [SerializeField] FlashImage _dmgImage = null, _healImage = null, _stunImage = null;
 
 
     public static FPController instance;
@@ -33,6 +32,8 @@ public class FPController : MonoBehaviour
     private int currentHealth;
     private int maxHealth = 100;
     private bool hasDied;
+
+    public Collider punchCollider;
 
     void Awake()
     {
@@ -115,6 +116,9 @@ public class FPController : MonoBehaviour
         _charController.Move(movement * Time.deltaTime * _speed);
     }
 
+    private void Attack()
+    { }
+
     public void TakeDMG(int dmgAmount)
     {
         _dmgImage.Flash();
@@ -150,6 +154,7 @@ public class FPController : MonoBehaviour
 
     IEnumerator Stunned(float seconds)
     {
+        _stunImage.Flash();
         float _prevSpeed = _speed;
         _speed = 0f;
 
