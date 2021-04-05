@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Spawner : MonoBehaviour
 { 
     public static int spawn = 10;
-    public static int killed = 0;
+    public static int left = 10;
+
+    Text enemyText;
 
     public GameObject[] prefabs = new GameObject[4];
     public bool stopSpawning = false;
@@ -19,13 +21,19 @@ public class Spawner : MonoBehaviour
     void Reset()
     {
         spawn = 10;
-        killed = 0;
+        left = 10;
     }
 
     private void Start()
     {
         Reset();
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
+        enemyText = GameObject.Find("Number").GetComponent<Text>();
+    }
+
+    private void Update()
+    {
+        enemyText.text = left.ToString();
     }
 
     void SpawnObject()
@@ -44,11 +52,10 @@ public class Spawner : MonoBehaviour
         if (stopSpawning)
         {
             CancelInvoke("SpawnObject");
-            if (killed == 10)
+            if (left == 0)
             {
-                Cursor.lockState = CursorLockMode.None;
                 win.SetActive(true);
-                
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }

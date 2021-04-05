@@ -41,13 +41,10 @@ public class EnemyAI : MonoBehaviour
     public Animator anim;
     private string currentState;
 
-    SpriteRenderer renderer;
-
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        renderer = GameObject.Find("Sprite").GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -147,12 +144,14 @@ public class EnemyAI : MonoBehaviour
 
         if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
 
+        ChangingAnimationState("Walking");
+
 
     }
     private void DestroyEnemy()
     {
         Destroy(gameObject);
-        Spawner.killed++;
+        Spawner.left--;
     }
 
     private void OnTriggerEnter(Collider other)
