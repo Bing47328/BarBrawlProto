@@ -40,8 +40,7 @@ public class EnemyAI: MonoBehaviour
     public Animator anim;
     private string currentState;
 
-    public Text enemyText;
-    private int enemies = 25;
+    public static int enemies = Spawner.spawn;
 
     private void Awake()
     {
@@ -60,8 +59,6 @@ public class EnemyAI: MonoBehaviour
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
 
         aim = new Vector3(shot.transform.position.x, shot.transform.position.y, shot.transform.position.z);
-
-        enemyText.text = enemies.ToString();
     }
 
     void ChangingAnimationState(string newState)

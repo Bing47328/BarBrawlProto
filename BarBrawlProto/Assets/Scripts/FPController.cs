@@ -14,6 +14,7 @@ public class FPController : MonoBehaviour
     public Text healthText;
 
     public GameObject deadScreen;
+    public GameObject winScreen;
     public GameObject uiScreen;
     public GameObject impactPrefab;
 
@@ -34,9 +35,7 @@ public class FPController : MonoBehaviour
     private int maxHealth = 100;
     private bool hasDied;
 
-
-
-    public Collider punchCollider;
+    public Text enemyText;
 
     void Awake()
     {
@@ -58,6 +57,8 @@ public class FPController : MonoBehaviour
 
     void Update()
     {
+        enemyText.text = EnemyAI.enemies.ToString();
+
         if (!hasDied)
         {
             PlayerMovement();
@@ -96,6 +97,12 @@ public class FPController : MonoBehaviour
 
                 Debug.DrawRay(ray.origin, ray.direction, Color.green);
             }
+        }
+
+        if (EnemyAI.enemies.ToString() == "0")
+        {
+            winScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
