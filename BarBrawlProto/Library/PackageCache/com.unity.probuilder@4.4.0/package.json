@@ -54,12 +54,12 @@
   "repository": {
     "url": "https://github.com/Unity-Technologies/com.unity.probuilder.git",
     "type": "git",
-    "revision": "04b57a20391934bc7460d5fe1017d157545b2a5f"
+    "revision": "d243c1219596074e6d10bfe428b921da779d2430"
   },
   "relatedPackages": {
     "com.unity.probuilder.tests": "4.4.0"
   },
   "upmCi": {
-    "footprint": "1bacebba175d730c831261b30e5cd998c796f5a4"
+    "footprint": "ac540254ec6e352e7eaeafc08693a5bd6d93d11f"
   }
 }
