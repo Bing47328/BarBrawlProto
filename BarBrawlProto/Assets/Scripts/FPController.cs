@@ -57,8 +57,6 @@ public class FPController : MonoBehaviour
 
     void Update()
     {
-        //enemyText.text = EnemyAI.enemies.ToString();
-
         if (!hasDied)
         {
             PlayerMovement();
@@ -78,7 +76,7 @@ public class FPController : MonoBehaviour
             {
                 Ray ray = _camera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, .75f))
+                if (Physics.Raycast(ray, out hit, 1f))
                 {
                     Instantiate(impactPrefab, hit.point, transform.rotation);
 
@@ -88,22 +86,10 @@ public class FPController : MonoBehaviour
                         hit.transform.GetComponent<EnemyAI>().TakeDamage(5);
                     }
                 }
-                else
-                {
-                    Debug.Log("Looking @ Nothing");
-                }
                 //currentAmmo--;
                 fistAnim.SetTrigger("Shoot");
-
-                Debug.DrawRay(ray.origin, ray.direction, Color.green);
             }
         }
-
-       // if (EnemyAI.enemies.ToString() == "0")
-       // {
-       //     winScreen.SetActive(true);
-       //     Cursor.lockState = CursorLockMode.None;
-       // }
     }
 
     private void FixedUpdate()

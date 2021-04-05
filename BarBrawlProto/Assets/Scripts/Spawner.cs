@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 { 
-    public static int spawn = 5;
+    public static int spawn = 10;
+    public static int killed = 0;
 
     public GameObject[] prefabs = new GameObject[4];
     public bool stopSpawning = false;
     public float spawnTime;
     public float spawnDelay;
 
+    public GameObject win;
+
     void Reset()
     {
-        spawn = 5;
+        spawn = 10;
+        killed = 0;
     }
 
     private void Start()
@@ -38,6 +42,12 @@ public class Spawner : MonoBehaviour
         if (stopSpawning)
         {
             CancelInvoke("SpawnObject");
+            if (killed == 10)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                win.SetActive(true);
+                
+            }
         }
     }
 }

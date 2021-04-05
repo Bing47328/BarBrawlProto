@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\FPController.cs" />
     <Compile Include="Assets\Scripts\FlashImage.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
