@@ -17,7 +17,6 @@ public class HealthSpawner : MonoBehaviour
     void SpawnObject()
     {
         Instantiate(spawn, transform.position, transform.rotation);
-        stopSpawning = true;
         if (stopSpawning)
         {
             CancelInvoke("SpawnObject");

@@ -40,16 +40,20 @@ public class EnemyAI: MonoBehaviour
     public Animator anim;
     private string currentState;
 
-    public static int enemies = Spawner.spawn;
+    public int enemies = 5;
+    Text enemyText;
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        enemyText = GameObject.Find("Bullets").GetComponent<Text>();
     }
 
     private void Update()
     {
+        enemyText.GetComponent<Text>().text = enemies.ToString();
+
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -146,8 +150,8 @@ public class EnemyAI: MonoBehaviour
     }
     private void DestroyEnemy()
     {
-        Destroy(gameObject);
         enemies--;
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

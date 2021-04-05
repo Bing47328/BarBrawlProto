@@ -72,11 +72,9 @@
     <Compile Include="Assets\Scripts\FlashImage.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\HealthSpawner.cs" />
-    <Compile Include="Assets\Scripts\InGameTimer.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Scenes.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Stats.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

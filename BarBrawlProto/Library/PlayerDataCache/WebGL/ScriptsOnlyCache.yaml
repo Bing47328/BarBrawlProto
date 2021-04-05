@@ -8,11 +8,9 @@ ScriptsOnlyBuild:
     - FlashImage
     - HealthPickup
     - HealthSpawner
-    - InGameTimer
     - Projectile
     - Scenes
     - Spawner
-    - Stats
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
     Unity.ProBuilder.Editor.dll:
@@ -157,10 +155,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13608}
     - Class: 114
       Script: {instanceID: 13828}
-    - Class: 114
-      Script: {instanceID: 21672}
-    - Class: 114
-      Script: {instanceID: 22574}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -772,18 +766,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 4ce15e99c635d2567873d27549d1f16f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: InGameTimer
-  - hash:
-      serializedVersion: 2
-      Hash: 1884b44e6c7c1b6dee1f952f420179e9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Stats
   platform: 20
   scenePathNames:
   - Assets/Scenes/Menu.unity

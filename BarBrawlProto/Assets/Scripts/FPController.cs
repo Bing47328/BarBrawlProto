@@ -35,7 +35,7 @@ public class FPController : MonoBehaviour
     private int maxHealth = 100;
     private bool hasDied;
 
-    public Text enemyText;
+   // public Text enemyText;
 
     void Awake()
     {
@@ -57,7 +57,7 @@ public class FPController : MonoBehaviour
 
     void Update()
     {
-        enemyText.text = EnemyAI.enemies.ToString();
+        //enemyText.text = EnemyAI.enemies.ToString();
 
         if (!hasDied)
         {
@@ -99,11 +99,11 @@ public class FPController : MonoBehaviour
             }
         }
 
-        if (EnemyAI.enemies.ToString() == "0")
-        {
-            winScreen.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-        }
+       // if (EnemyAI.enemies.ToString() == "0")
+       // {
+       //     winScreen.SetActive(true);
+       //     Cursor.lockState = CursorLockMode.None;
+       // }
     }
 
     private void FixedUpdate()

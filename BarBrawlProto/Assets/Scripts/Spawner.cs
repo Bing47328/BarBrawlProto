@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
-{
+{ 
     public static int spawn = 5;
 
     public GameObject[] prefabs = new GameObject[4];
@@ -12,10 +12,15 @@ public class Spawner : MonoBehaviour
     public float spawnTime;
     public float spawnDelay;
 
+    void Reset()
+    {
+        spawn = 5;
+    }
+
     private void Start()
     {
+        Reset();
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
-
     }
 
     void SpawnObject()
