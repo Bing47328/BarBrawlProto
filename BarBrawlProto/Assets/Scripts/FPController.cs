@@ -14,6 +14,7 @@ public class FPController : MonoBehaviour
     public Text healthText;
 
     public GameObject deadScreen;
+    public GameObject uiScreen;
     public GameObject impactPrefab;
 
     public Animator fistAnim;
@@ -72,9 +73,9 @@ public class FPController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+                Ray ray = _camera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, .3f))
+                if (Physics.Raycast(ray, out hit, .75f))
                 {
                     Instantiate(impactPrefab, hit.point, transform.rotation);
 
@@ -90,6 +91,8 @@ public class FPController : MonoBehaviour
                 }
                 //currentAmmo--;
                 fistAnim.SetTrigger("Shoot");
+
+                Debug.DrawRay(ray.origin, ray.direction, Color.green);
             }
         }
     }
@@ -124,6 +127,7 @@ public class FPController : MonoBehaviour
         if (currentHealth <= 0)
         {
             deadScreen.SetActive(true);
+            uiScreen.SetActive(false);
             hasDied = true;
             currentHealth = 0;
             Cursor.lockState = CursorLockMode.None;
