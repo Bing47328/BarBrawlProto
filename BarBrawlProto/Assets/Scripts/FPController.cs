@@ -34,6 +34,8 @@ public class FPController : MonoBehaviour
     private int maxHealth = 100;
     private bool hasDied;
 
+
+
     public Collider punchCollider;
 
     void Awake()
