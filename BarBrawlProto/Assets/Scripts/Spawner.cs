@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     public float spawnDelay;
 
     public GameObject win;
+    public AudioSource spawned;
 
     void Reset()
     {
@@ -32,6 +33,7 @@ public class Spawner : MonoBehaviour
         if (spawn != 0)
         {
             Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform.position, transform.rotation);
+            spawned.Play();
             spawn--;
         }
         else

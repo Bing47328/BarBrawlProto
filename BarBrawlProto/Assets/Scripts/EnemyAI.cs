@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -40,10 +41,13 @@ public class EnemyAI : MonoBehaviour
     public Animator anim;
     private string currentState;
 
+    SpriteRenderer renderer;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        renderer = GameObject.Find("Sprite").GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -139,8 +143,11 @@ public class EnemyAI : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        ChangingAnimationState("Damaged");
 
         if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+
+
     }
     private void DestroyEnemy()
     {
@@ -157,6 +164,7 @@ public class EnemyAI : MonoBehaviour
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
             if (canStun)
             {
+                ChangingAnimationState("Attack");
                 FPController.instance.GetStun(2);
             }
         }

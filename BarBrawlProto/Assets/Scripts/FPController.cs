@@ -35,8 +35,11 @@ public class FPController : MonoBehaviour
     private int maxHealth = 100;
     private bool hasDied;
 
-   // public Text enemyText;
-
+    public AudioSource punch;
+    public AudioSource failPunch;
+    public AudioSource health;
+    public AudioSource hurt;
+    public AudioSource stun;
     void Awake()
     {
         instance = this;
@@ -74,6 +77,7 @@ public class FPController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                failPunch.Play();
                 Ray ray = _camera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 1f))
@@ -83,6 +87,7 @@ public class FPController : MonoBehaviour
                     //Enemy Hit
                     if (hit.transform.tag == "Enemy")
                     {
+                        punch.Play();
                         hit.transform.GetComponent<EnemyAI>().TakeDamage(5);
                     }
                 }
@@ -116,6 +121,7 @@ public class FPController : MonoBehaviour
 
     public void TakeDMG(int dmgAmount)
     {
+        hurt.Play();
         _dmgImage.Flash();
         currentHealth -= dmgAmount;
 
@@ -133,11 +139,13 @@ public class FPController : MonoBehaviour
 
     public void GetStun(int seconds)
     {
+        stun.Play();
         StartCoroutine(Stunned(seconds));
     }
 
     public void AddHealth(int healAmount)
     {
+        health.Play();
         _healImage.Flash();
         currentHealth += healAmount;
         if (currentHealth > maxHealth)

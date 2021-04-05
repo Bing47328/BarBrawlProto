@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 614248342862867744}
   - component: {fileID: 614248342862867748}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Prefab0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,6 +74,7 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   canShoot: 0
+  canStun: 0
   timeBetweenAttacks: 2
   projectile: {fileID: 1905503618554466263, guid: f7f8e7995964e1a43acdc5f43de4cabc,
     type: 3}
