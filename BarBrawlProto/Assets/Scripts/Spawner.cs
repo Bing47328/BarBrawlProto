@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject spawn;
+    public static int spawn = 25;
+
+    public GameObject[] prefabs = new GameObject[4];
     public bool stopSpawning = false;
     public float spawnTime;
     public float spawnDelay;
@@ -12,11 +15,21 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
+
     }
 
     void SpawnObject()
     {
-        Instantiate(spawn, transform.position, transform.rotation);
+        if (spawn != 0)
+        {
+            Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform.position, transform.rotation);
+            spawn--;
+        }
+        else
+        {
+            stopSpawning = true;
+        }
+
         if (stopSpawning)
         {
             CancelInvoke("SpawnObject");

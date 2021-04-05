@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyAI: MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class EnemyAI: MonoBehaviour
     public Animator anim;
     private string currentState;
 
+    public Text enemyText;
+    private int enemies = 25;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -56,6 +60,8 @@ public class EnemyAI: MonoBehaviour
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
 
         aim = new Vector3(shot.transform.position.x, shot.transform.position.y, shot.transform.position.z);
+
+        enemyText.text = enemies.ToString();
     }
 
     void ChangingAnimationState(string newState)
@@ -144,6 +150,7 @@ public class EnemyAI: MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+        enemies--;
     }
 
     private void OnTriggerEnter(Collider other)
