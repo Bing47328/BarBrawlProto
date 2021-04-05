@@ -31,9 +31,4 @@ public class Scenes : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
-
-    public void Tutorial()
-    {
-        SceneManager.LoadScene("Tutorial");
-    }
 }
