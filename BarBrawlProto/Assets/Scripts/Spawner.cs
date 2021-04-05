@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    public static int spawn = 25;
+    public static int spawn = 5;
 
     public GameObject[] prefabs = new GameObject[4];
     public bool stopSpawning = false;

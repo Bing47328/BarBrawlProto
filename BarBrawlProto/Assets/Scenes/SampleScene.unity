@@ -312,14 +312,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 193428951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f2c7267822cac4e8edd204b1a536b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 92845691fb8e843439357d14dda8b39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 716503429689920283, guid: e6ad8dcfb42dc834a86865474c1060c6, type: 3}
+  spawn: {fileID: 716503429689920283, guid: e6ad8dcfb42dc834a86865474c1060c6, type: 3}
   stopSpawning: 0
   spawnTime: 1
-  spawnDelay: 15
+  spawnDelay: 10
 --- !u!1 &206387039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,14 +1970,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1199481771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f2c7267822cac4e8edd204b1a536b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 92845691fb8e843439357d14dda8b39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 716503429689920283, guid: e6ad8dcfb42dc834a86865474c1060c6, type: 3}
+  spawn: {fileID: 716503429689920283, guid: e6ad8dcfb42dc834a86865474c1060c6, type: 3}
   stopSpawning: 0
   spawnTime: 1
-  spawnDelay: 15
+  spawnDelay: 10
 --- !u!1 &1208507413
 GameObject:
   m_ObjectHideFlags: 0
@@ -11405,7 +11403,7 @@ MonoBehaviour:
   _stunImage: {fileID: 795432436}
   healthText: {fileID: 673420863}
   deadScreen: {fileID: 1285906082}
-  winScreen: {fileID: 0}
+  winScreen: {fileID: 190052859}
   uiScreen: {fileID: 1126838559}
   impactPrefab: {fileID: 5437532464968066350, guid: bfeb9f3a6c8e0314da68271626f803f1,
     type: 3}
@@ -13109,14 +13107,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1562367857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f2c7267822cac4e8edd204b1a536b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 92845691fb8e843439357d14dda8b39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 716503429689920283, guid: e6ad8dcfb42dc834a86865474c1060c6, type: 3}
+  spawn: {fileID: 716503429689920283, guid: e6ad8dcfb42dc834a86865474c1060c6, type: 3}
   stopSpawning: 0
   spawnTime: 1
-  spawnDelay: 15
+  spawnDelay: 10
 --- !u!1 &1562504452
 GameObject:
   m_ObjectHideFlags: 0

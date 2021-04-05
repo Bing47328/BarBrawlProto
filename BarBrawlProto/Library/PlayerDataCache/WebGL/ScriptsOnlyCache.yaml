@@ -5,9 +5,14 @@ ScriptsOnlyBuild:
     - Destroy
     - EnemyAI
     - FPController
+    - FlashImage
+    - HealthPickup
+    - HealthSpawner
+    - InGameTimer
     - Projectile
     - Scenes
     - Spawner
+    - Stats
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
     Unity.ProBuilder.Editor.dll:
@@ -15,12 +20,6 @@ ScriptsOnlyBuild:
     - UnityEditor.ProBuilder.ProBuilderEditor
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -34,6 +33,57 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/Menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11272}
+    - Class: 114
+      Script: {instanceID: 11528}
+    - Class: 114
+      Script: {instanceID: 11580}
+    - Class: 114
+      Script: {instanceID: 12110}
+    - Class: 114
+      Script: {instanceID: 12674}
+    - Class: 114
+      Script: {instanceID: 12740}
+    - Class: 114
+      Script: {instanceID: 13332}
+    - Class: 114
+      Script: {instanceID: 13828}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -57,6 +107,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -72,33 +124,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11272}
     - Class: 114
-      Script: {instanceID: 11526}
+      Script: {instanceID: 11514}
     - Class: 114
-      Script: {instanceID: 11578}
+      Script: {instanceID: 11528}
     - Class: 114
-      Script: {instanceID: 12106}
+      Script: {instanceID: 11580}
     - Class: 114
-      Script: {instanceID: 12312}
+      Script: {instanceID: 11908}
     - Class: 114
-      Script: {instanceID: 12376}
+      Script: {instanceID: 12110}
     - Class: 114
-      Script: {instanceID: 12492}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12538}
+      Script: {instanceID: 12380}
     - Class: 114
-      Script: {instanceID: 12594}
+      Script: {instanceID: 12496}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12542}
     - Class: 114
-      Script: {instanceID: 12736}
+      Script: {instanceID: 12598}
     - Class: 114
-      Script: {instanceID: 13280}
+      Script: {instanceID: 12674}
     - Class: 114
-      Script: {instanceID: 13328}
+      Script: {instanceID: 12740}
     - Class: 114
-      Script: {instanceID: 13604}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 13824}
+      Script: {instanceID: 13284}
+    - Class: 114
+      Script: {instanceID: 13332}
+    - Class: 114
+      Script: {instanceID: 13608}
+    - Class: 114
+      Script: {instanceID: 13828}
+    - Class: 114
+      Script: {instanceID: 21672}
+    - Class: 114
+      Script: {instanceID: 22574}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -206,6 +268,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: b1ed3e75a560de9020710611f8b7dfa6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthSpawner
   - hash:
       serializedVersion: 2
       Hash: 72712369a7c681ad84fc255a5ec0b333
@@ -328,6 +396,12 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
+      Hash: 662d8b2e1149342eb91aebee100a2fa7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlashImage
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -400,7 +474,7 @@ ScriptsOnlyBuild:
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
-      Hash: b1ed3e75a560de9020710611f8b7dfa6
+      Hash: 8ddaef0405526bca4f8356e4ab5c30a9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawner
@@ -436,7 +510,7 @@ ScriptsOnlyBuild:
     className: ColliderBehaviour
   - hash:
       serializedVersion: 2
-      Hash: a84af123f61a8f31fce47a36e0a41eee
+      Hash: 2bc67b995e507d99f582f8dfb368e1f0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FPController
@@ -472,7 +546,7 @@ ScriptsOnlyBuild:
     className: IgnoreSnap
   - hash:
       serializedVersion: 2
-      Hash: 8f085ae6e82d89ed2610a0f2cd67cc83
+      Hash: d9f8f80309a9a54904bf93b70bb858eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyAI
@@ -698,7 +772,20 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 4ce15e99c635d2567873d27549d1f16f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InGameTimer
+  - hash:
+      serializedVersion: 2
+      Hash: 1884b44e6c7c1b6dee1f952f420179e9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Stats
   platform: 20
   scenePathNames:
+  - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
   playerPath: D:/Unity/BarBrawlProto/BarBrawlProto/BarBrawlProto/BarBrawl
