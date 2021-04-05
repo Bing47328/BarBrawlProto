@@ -116,9 +116,6 @@ public class FPController : MonoBehaviour
         _charController.Move(movement * Time.deltaTime * _speed);
     }
 
-    private void Attack()
-    { }
-
     public void TakeDMG(int dmgAmount)
     {
         _dmgImage.Flash();
