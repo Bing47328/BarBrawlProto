@@ -80,7 +80,7 @@ public class FPController : MonoBehaviour
                 failPunch.Play();
                 Ray ray = _camera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 1.2f))
+                if (Physics.Raycast(ray, out hit, 1.5f))
                 {
                     Instantiate(impactPrefab, hit.point, transform.rotation);
 

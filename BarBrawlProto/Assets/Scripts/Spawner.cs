@@ -34,6 +34,11 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         enemyText.text = left.ToString();
+        if (left == 0)
+        {
+            win.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     void SpawnObject()
@@ -52,11 +57,6 @@ public class Spawner : MonoBehaviour
         if (stopSpawning)
         {
             CancelInvoke("SpawnObject");
-            if (left == 0)
-            {
-                win.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-            }
         }
     }
 }
