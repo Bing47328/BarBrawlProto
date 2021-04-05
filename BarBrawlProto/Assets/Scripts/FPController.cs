@@ -71,7 +71,7 @@ public class FPController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = _camera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, .3f))
                 {
